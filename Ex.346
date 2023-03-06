@@ -1,0 +1,66 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.ex346;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author eMiLy
+ */
+public class Ex346 {
+
+    public static void main(String[] args) {
+        String fr;
+        int op, x, tam;
+        
+        System.err.println("Menu:");
+        System.err.println("1- Digite o comprimento da frase: ");
+        System.err.println("2- Digite os 2 primeiros e 2 ultimos caracteres da frase: ");
+        System.err.println("3- Digite a frase espelhada: ");
+        System.err.println("4- Termina o aloritmo:");
+        op=Integer.parseInt(JOptionPane.showInputDialog("Opção: "));
+        
+        if (op==1){
+            fr=String.valueOf(JOptionPane.showInputDialog("Digite uma frase: "));
+            JOptionPane.showInputDialog("Numero de caracteres da frase: " +strtam(fr));
+        }
+        else if(op==2){
+            fr=String.valueOf(JOptionPane.showInputDialog("Digite uma frase: "));
+            JOptionPane.showInputDialog("Os 2 primeiros caracteres: " +strnprim(fr, 2));
+            tam=Integer.parseInt(strtam(fr))-2;
+            JOptionPane.showInputDialog("Os 2 ultimos caracteres: " +strnresto(fr, tam));
+        }
+        else if (op==3){
+            x=Integer.parseInt(JOptionPane.showInputDialog("Digite uma frase: "));
+            for(x=strtam(fr)-1; x>=0; x-1){
+            JOptionPane.showInputDialog( "Frase: "+strelem(fr, x));
+            }
+        }
+        else if (op==4){
+            JOptionPane.showInputDialog("Fim do algorismo:"); 
+        }
+        else{
+            JOptionPane.showInputDialog("Opcao indisponivel:"); 
+        }
+        
+    }
+
+    private static String strtam(String fr) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private static String strnprim(String fr, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private static String strnresto(String fr, int tam) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private static String strelem(String fr, int x) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
