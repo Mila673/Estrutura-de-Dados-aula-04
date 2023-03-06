@@ -1,0 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.ex348;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author eMiLy
+ */
+public class Ex348 {
+
+    public static void main(String[] args) {
+        int L;
+        int n1[]= new int[5];
+        int n2[]= new int[5];
+        int media[]= new int [5];
+        String nomes[]= new String [5];
+        
+        for(L=0; L<=4; L++){
+           nomes[L]=String.valueOf(JOptionPane.showInputDialog("Digite Nome: " +L));
+           n1[L]=Integer.parseInt(JOptionPane.showInputDialog("Digite a 1ª nota: "));
+           n2[L]=Integer.parseInt(JOptionPane.showInputDialog("Digite a 2ª nota: "));
+           
+           media[L]=(n1[L]+n2[L])/2;
+        }
+        
+        JOptionPane.showMessageDialog(null, "\t \t \t Relacao final: ");
+        
+        for(L=0; L<=4; L++){
+            JOptionPane.showMessageDialog(null, "Nome: " + L+ "-" + nomes[L]);
+            JOptionPane.showMessageDialog(null, "N1:" + n1[L] + " N2:" + n2[L] + " media: " + media[L]);
+        }
+    }
+}
