@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.ex358;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author User
+ */
+public class Ex358 {
+
+    public static void main(String[] args) {
+        int lucro, A;
+        int Lmenor10=0, Lmenor20=0, Lmaior20 = 0; /*lucros %*/
+        int pcompra[]= new int [10]; /*preco compra*/
+        int pvenda[]= new int [10]; /*preco venda*/
+        
+        for(A=0; A<10; A++){
+            pcompra[A]=Integer.parseInt(JOptionPane.showInputDialog("Preco de compra: " ));
+            pvenda[A]=Integer.parseInt(JOptionPane.showInputDialog("Preco de venda: " ));
+        }
+        for (A=0; A<10; A++){
+            lucro=pvenda[A] - pcompra[A];
+            
+            if(lucro<10.0){
+                Lmenor10++;
+            }if (lucro <=20.0) {
+                Lmenor20++;
+            }if (lucro >20.0) {
+                  Lmaior20++;     }
+        }
+        JOptionPane.showMessageDialog(null, "Total mercadorias lucro <10%: " +Lmenor10);
+        JOptionPane.showMessageDialog(null, "Total mercadorias lucro >=10% e <=20%: " +Lmenor20);
+        JOptionPane.showMessageDialog(null, "Total mercadorias lucro >20%: " +Lmaior20);
+    }
+}
