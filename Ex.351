@@ -1,0 +1,31 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.ex351;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author eMiLy
+ */
+public class Ex351 {
+
+    public static void main(String[] args) {
+        int L, num;
+        String nomes[] = new String [5];
+        
+        for(L=0; L<=4; L++){
+           nomes[L]=String.valueOf(JOptionPane.showInputDialog("Nome: " +L));
+        }
+        
+        num=Integer.parseInt(JOptionPane.showInputDialog("Digite o numero da pessoa: "));
+        
+        while (num<1 || num>5){
+               JOptionPane.showMessageDialog(null, "Numero fora do intervalo");
+               num=Integer.parseInt(JOptionPane.showInputDialog("Digite o numero da pessoa: "));
+        }
+        JOptionPane.showMessageDialog(null, "Nomes: " +nomes[num-1]);
+    }
+}
