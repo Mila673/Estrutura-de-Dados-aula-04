@@ -10,57 +10,61 @@ import javax.swing.JOptionPane;
  *
  * @author eMiLy
  */
-public class Ex346 {
+import javax.swing.JOptionPane;
+import java.util.Scanner;
+public class E346 {
 
-    public static void main(String[] args) {
-        String fr;
-        int op, x, tam;
-        
-        System.err.println("Menu:");
-        System.err.println("1- Digite o comprimento da frase: ");
-        System.err.println("2- Digite os 2 primeiros e 2 ultimos caracteres da frase: ");
-        System.err.println("3- Digite a frase espelhada: ");
-        System.err.println("4- Termina o aloritmo:");
-        op=Integer.parseInt(JOptionPane.showInputDialog("Opção: "));
-        
-        if (op==1){
-            fr=String.valueOf(JOptionPane.showInputDialog("Digite uma frase: "));
-            JOptionPane.showInputDialog("Numero de caracteres da frase: " +strtam(fr));
-        }
-        else if(op==2){
-            fr=String.valueOf(JOptionPane.showInputDialog("Digite uma frase: "));
-            JOptionPane.showInputDialog("Os 2 primeiros caracteres: " +strnprim(fr, 2));
-            tam=Integer.parseInt(strtam(fr))-2;
-            JOptionPane.showInputDialog("Os 2 ultimos caracteres: " +strnresto(fr, tam));
-        }
-        else if (op==3){
-            x=Integer.parseInt(JOptionPane.showInputDialog("Digite uma frase: "));
-            for(x=strtam(fr)-1; x>=0; x-1){
-            JOptionPane.showInputDialog( "Frase: "+strelem(fr, x));
-            }
-        }
-        else if (op==4){
-            JOptionPane.showInputDialog("Fim do algorismo:"); 
-        }
-        else{
-            JOptionPane.showInputDialog("Opcao indisponivel:"); 
-        }
-        
-    }
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String frase = "";
+		String fr;
+		int op, x, tam;
 
-    private static String strtam(String fr) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+		while (true) {
+			System.out.println("MENU");
+		    System.out.println("1 - Imprime o comprimento da frase");
+		    System.out.println("2 - Imprime os dois primeiros e os dois últimos caracteres da frase");
+		    System.out.println("3 - Imprime a frase espelhada");
+		    System.out.println("4 - Termina o algoritmo");
 
-    private static String strnprim(String fr, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+		    System.out.print("Escolha uma opção: ");
+		    int opcao = scanner.nextInt();
+		    scanner.nextLine(); 
 
-    private static String strnresto(String fr, int tam) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+		    switch (opcao) {
+		    case 1:
+		    	System.out.print("Digite uma frase: ");
+		        frase = scanner.nextLine();
+		        System.out.println("Comprimento da frase: " + frase.length());
+		        break;
 
-    private static String strelem(String fr, int x) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+		    case 2:
+		        if (frase.length() >= 4) {
+		        	System.out.print("Digite uma frase: ");
+			        frase = scanner.nextLine();
+		            System.out.println("Dois primeiros caracteres: " + frase.substring(0, 2));
+		            System.out.println("Dois últimos caracteres: " + frase.substring(frase.length() - 2));
+		        } else {
+		            System.out.println("A frase é muito curta para esta opção.");
+		      }
+		        break;
+
+		   case 3:
+		            System.out.print("Digite uma frase: ");
+		            frase = scanner.nextLine();
+		            System.out.println("Frase espelhada: " + new StringBuilder(frase).reverse().toString());
+		            break;
+
+		   case 4:
+		            System.out.println("Terminando o algoritmo.");
+		            scanner.close();
+		            System.exit(0);
+		            break;
+
+		   default:
+		            System.out.println("Opção inválida. Tente novamente.");
+		            
+		            }
+		        }
+		    }
 }
