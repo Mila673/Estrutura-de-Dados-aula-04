@@ -17,8 +17,7 @@ public class E346 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		String frase = "";
-		String fr;
-		int op, x, tam;
+		int op;
 
 		while (true) {
 			System.out.println("MENU");
@@ -28,10 +27,10 @@ public class E346 {
 		    System.out.println("4 - Termina o algoritmo");
 
 		    System.out.print("Escolha uma opção: ");
-		    int opcao = scanner.nextInt();
+		     op = scanner.nextInt();
 		    scanner.nextLine(); 
 
-		    switch (opcao) {
+		    switch (op) {
 		    case 1:
 		    	System.out.print("Digite uma frase: ");
 		        frase = scanner.nextLine();
