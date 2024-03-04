@@ -13,14 +13,20 @@ import javax.swing.JOptionPane;
 public class Ex358 {
 
     public static void main(String[] args) {
-        int lucro, A;
+        Scanner scanner = new Scanner(System.in);
+		int lucro, A;
         int Lmenor10=0, Lmenor20=0, Lmaior20 = 0; /*lucros %*/
         int pcompra[]= new int [10]; /*preco compra*/
         int pvenda[]= new int [10]; /*preco venda*/
         
         for(A=0; A<10; A++){
-            pcompra[A]=Integer.parseInt(JOptionPane.showInputDialog("Preco de compra: " ));
-            pvenda[A]=Integer.parseInt(JOptionPane.showInputDialog("Preco de venda: " ));
+            System.out.print("Preco de compra: ");
+            pcompra[A] = scanner.nextInt();
+            scanner.nextLine();
+            
+            System.out.print("Preco de venda: ");
+            pcompra[A] = scanner.nextInt();
+            scanner.nextLine();
         }
         for (A=0; A<10; A++){
             lucro=pvenda[A] - pcompra[A];
@@ -32,8 +38,8 @@ public class Ex358 {
             }if (lucro >20.0) {
                   Lmaior20++;     }
         }
-        JOptionPane.showMessageDialog(null, "Total mercadorias lucro <10%: " +Lmenor10);
-        JOptionPane.showMessageDialog(null, "Total mercadorias lucro >=10% e <=20%: " +Lmenor20);
-        JOptionPane.showMessageDialog(null, "Total mercadorias lucro >20%: " +Lmaior20);
+        System.out.println("Total mercadorias lucro <10%: " +Lmenor10);
+        System.out.println("Total mercadorias lucro entre 10% e 20%: " +Lmenor20);
+        System.out.println("Total mercadorias lucro >20%: " +Lmaior20);
     }
 }
