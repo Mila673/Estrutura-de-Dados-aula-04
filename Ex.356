@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.ex356;
 
 import javax.swing.JOptionPane;
@@ -13,53 +9,47 @@ import javax.swing.JOptionPane;
 public class Ex356 {
 
     public static void main(String[] args) {
-       int L, c, t;
-       int media[]=new int [10];
-       String nomes[] = new String[10];
-       String sit[]= new String [10];
-       float n1[]= new float [10];
-       float n2[] = new float [10];
-       
-        for(L=0; L<=14; L++){
-           nomes[L]=String.valueOf(JOptionPane.showInputDialog("Nome: " +L));
+        Scanner scanner = new Scanner(System.in);
+		int L, c, t;
+	    int media[]=new int [10];
+	    String nomes[] = new String[10];
+	    String sit[]= new String [10];
+	    float n1[]= new float [10];
+	    float n2[] = new float [10];
+	       
+	     for (L = 0; L < 10; L++) {
+            System.out.print("Nome " + (L + 1) + ": ");
+	        nomes[L] = scanner.next();
+	        scanner.nextLine();
 
-           while(strtam(nomes[L])>30){
-               JOptionPane.showMessageDialog(null, "Nomes com ate 30 caracteres");
-               nomes[L]=String.valueOf(JOptionPane.showInputDialog("Nome: " +L));
+	     while (nomes[L].length() > 30) {
+	         System.out.println("Nomes com até 30 caracteres");
+	          System.out.print("Nome " + (L + 1) + ": ");
+	           nomes[L] = scanner.next();
+	           scanner.nextLine();
+	    }
+	           
+	       t = 30 - nomes[L].length();
+           for (c = 1; c <= t; c++) {
+               nomes[L] = nomes[L] + " ";
            }
-           t=30-strtam(nomes[L]);
-           for(c=1; c<=t; c++){
-               nomes[L]=strconcat(nomes[L], "");
-           }
-           
-           n1[L]=Float.valueOf(JOptionPane.showInputDialog("Digite a nota 1: " ));
-           n2[L]=Float.valueOf(JOptionPane.showInputDialog("Digite a nota 2: " ));
-           
-           media[L]=realint((n1[L]+n2[L])/2+0.0001);
-           if (media[L]>=5){
-               JOptionPane.showMessageDialog(null, "Aprovado");
-           }
-           if (media[L]<5){
-               JOptionPane.showMessageDialog(null, "Reprovado");
-           }
-        }
-        System.out.println("\n \n \n \t \t \t \t Relacao final: \n");
-        
-        for(L=0; L<=14; L++){
-            System.out.println("\n" +L+ "-" + nomes[L]+ "\t"+ n1[L]+ "\t"+ n2[L]+ "\t"+ media[L]+ "\t"+ sit[L]);
-        }
-       
-    }
-/*sit[L]=String.valueOf(JOptionPane.showMessageDialog(null, "Reprovado"));*/
-    private static int strtam(String nome) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private static String strconcat(String nome, String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private static int realint(double d) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	           
+	           System.out.print("Digite a nota 1: ");
+			   n1[L] = scanner.nextFloat();
+			   scanner.nextLine();
+			   
+			   System.out.print("Digite a nota 2: ");
+			   n2[L] = scanner.nextFloat();
+			   scanner.nextLine();
+	           
+			   media[L] = (int) ((n1[L] + n2[L]) / 2 + 0.0001);
+	           sit[L] = (media[L] >= 5) ? "Aprovado" : "Reprovado";
+	       }
+	        
+	        System.out.println("\n \n \n Relacao final: \n");
+	        
+	        for(L=0; L<10; L++){
+	            System.out.println("\n" +L+ "-" + nomes[L]+ "\t"+ n1[L]+ "\t"+ n2[L]+ "\t"+ media[L]+ "\t"+ sit[L]);
+	        }
     }
 }
